@@ -24,11 +24,13 @@ from datetime import timedelta
 Current_Time = datetime.now()
 Minus24 = Current_Time - timedelta(hours=24)
 
-source = os.path.normpath("C:/Users/singi/Desktop/SourceFilesFolder/")
+source = "C:/Users/singi/Desktop/SourceFilesFolder/"
 sourcelist = os.listdir(source)
 destination = os.path.normpath("C:/Users/singi/Desktop/TransferredFilesFolder/")
 
 for file in sourcelist:
-    Modified_Time = datetime.fromtimestamp(os.path.getmtime(source + "\\" + file))
-    if Modified_Time > Minus24:
-        shutil.copy(source + "\\" + file, destination)
+    if file.endswith(".txt"):
+        src = os.path.join(source,file)
+        Modified_Time = datetime.fromtimestamp(os.path.getmtime(src))
+        if Modified_Time > Minus24:
+            shutil.copy(src, destination)
