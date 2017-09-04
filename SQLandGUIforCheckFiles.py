@@ -22,7 +22,8 @@ files to be checked daily.
 copied files.
  Allows the user to manually initiate the 'file check' process that is performed by
 the program.
- Displays last 'file check' date/time retrieved from sqlite3 database
+ Displays last 'file check' date/time retrieved from sqlite3 database and uses that
+baseline to check for updated files since then.
 
 Images used are royalty free, no attribution required.
 '''
